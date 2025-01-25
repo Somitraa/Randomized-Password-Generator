@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" href="febb.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <p>Password Generator</p>
+            <div class="input">
+                <input type="text" id="name" placeholder="Enter Your First Name"><br><br>
+                <input type="text" id="lastname" placeholder="Enter Your Last Name"><br><br>
+                <input type="number" id="num" placeholder="Enter Your Phone number"><br><br>
+            </div>
+            <input type="text" id="Password"><br><br>
+            <button onclick="pass()">Generate Password</button>
+        </div>
+    </div>
+    <script>
+        const Password = document.getElementById("Password");
+
+        function pass(){
+
+            const name = document.getElementById("name").value;
+            const lastname = document.getElementById("lastname").value;
+            const number = document.getElementById("num").value;
+            const char="!@#$%";
+            let pass="";
+
+            pass += name[Math.floor(Math.random() * name.length)];
+            pass += name[Math.floor(Math.random() * name.length)];
+            pass += name[Math.floor(Math.random() * name.length)];
+            pass += name[Math.floor(Math.random() * name.length)];
+
+            pass += lastname[Math.floor(Math.random() * lastname.length)];
+            pass += lastname[Math.floor(Math.random() * lastname.length)];
+ 
+            pass += char[Math.floor(Math.random() * char.length)];
+
+            pass += number[Math.floor(Math.random() * number.length)];
+            pass += number[Math.floor(Math.random() * number.length)];
+            pass += number[Math.floor(Math.random() * number.length)];
+            pass += number[Math.floor(Math.random() * number.length)];
+            pass += number[Math.floor(Math.random() * number.length)];
+
+            Password.value = pass;
+
+        }
+    </script>
+</body>
+</html>
